@@ -1,21 +1,20 @@
-import React ,{useState} from "react";
+import React, { useState } from "react";
 import "../components/comment.scss";
 import avatarImage from "../assets/avatars/image-amyrobson.png";
 
-export default function Comment() {
-const [count,setCount] = useState(8);
-const initialCount = 8; 
-function upVote(){
-  if(initialCount >= count){
-    setCount((prevCount) => prevCount += 1)
+export default function Comment(props) {
+  const [count, setCount] = useState(props.comment.score);
+  const initialCount = props.comment.score;
+  function upVote() {
+    if (initialCount >= count) {
+      setCount((prevCount) => (prevCount += 1));
+    }
   }
-}
-function downVote(){
-  if(count !== 0 &&  count - initialCount === 1){
-    setCount((prevCount) => prevCount -= 1)
+  function downVote() {
+    if (count !== 0 && count - initialCount === 1) {
+      setCount((prevCount) => (prevCount -= 1));
+    }
   }
-  
-}
 
   return (
     <div className="comment">
@@ -42,8 +41,8 @@ function downVote(){
         <div className="comment-info-top">
           <div className="comment-user">
             <img src={avatarImage} alt="" />
-            <p className="name">amyrobson</p>
-            <p className="time">1 month ago</p>
+            <p className="name">{props.comment.user.username}</p>
+            <p className="time">{props.comment.createdAt}</p>
           </div>
           <p className="reply">
             <svg width="14" height="13" xmlns="http://www.w3.org/2000/svg">
@@ -52,20 +51,11 @@ function downVote(){
                 fill="#5357B6"
               />
             </svg>
-            <span>
-            Reply
-            </span>
+            <span>Reply</span>
           </p>
         </div>
         <div className="comment-text">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt
-            libero laborum voluptas esse impedit, provident rem unde tempore
-            distinctio suscipit beatae cupiditate debitis eaque. Laudantium,
-            deserunt consequatur laborum ipsum animi fugiat facilis sapiente
-            rerum, pariatur ab quod sit. Ducimus optio fuga error? Quas quaerat
-            dicta, repudiandae sit autem tempora asperiores.
-          </p>
+          <p>{props.comment.content}</p>
         </div>
       </div>
     </div>
