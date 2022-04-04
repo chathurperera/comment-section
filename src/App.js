@@ -5,7 +5,7 @@ import data from './assets/data.json';
 
 export default function App() {
   const commentsList = data.comments.map((comment) => {
-   return  <Comment key={comment.id} comment={comment} />
+   return  <Comment key={comment.id} replies={comment.replies} comment={comment} />
     
   })
   return (
