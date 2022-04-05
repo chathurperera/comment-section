@@ -79,7 +79,7 @@ export default function Reply(props) {
           )}
         </div>
         <div className="comment-text">
-          <p>{props.reply.content}</p>
+          <p><span className="replyingTo">@{props.reply.replyingTo}</span> {props.reply.content}</p>
         </div>
       </div>
     </div>

@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import "../components/comment.scss";
-import avatarImage from "../assets/avatars/image-amyrobson.png";
+import amyrobson from "../assets/avatars/image-amyrobson.png";
+import juliusomo from "../assets/avatars/image-juliusomo.png";
+import ramsesmiron from "../assets/avatars/image-ramsesmiron.png";
+import maxblagun from "../assets/avatars/image-maxblagun.png";
+
 import Reply from "../components/Reply";
 
 export default function Comment(props) {
@@ -42,7 +46,7 @@ export default function Comment(props) {
         <div className="comment-info">
           <div className="comment-info-top">
             <div className="comment-user">
-              <img src={avatarImage} alt="" />
+              <img src={maxblagun} alt="" />
               <p className="name">{props.comment.user.username}</p>
               <p className="time">{props.comment.createdAt}</p>
             </div>

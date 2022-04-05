@@ -70,7 +70,7 @@
     }
 }
 .replies{
-    border-left: 1px solid teal;
+    border-left: 1px solid rgba(128, 128, 128, 0.185);
     margin-left: 20px;
     padding-left: 20px;
     height: max-content;
@@ -87,4 +87,9 @@
     .red{
         color: red;
     }
+}
+.replyingTo{
+    color: #57509a;
+    margin-right: 8px;
+    font-weight: 600;
 }
