@@ -42,7 +42,7 @@ export default function Reply(props) {
           <div className="comment-user">
             <img src={avatarImage} alt="" />
             <p className="name">{props.reply.user.username}</p>
-            {props.reply.accountHolder ? <div className="tag">you</div> : ""}
+            {props.reply.accountHolder ? <div className="tag"><p>you</p> </div> : ""}
             <p className="time">{props.reply.createdAt}</p>
           </div>
           {!props.reply.accountHolder ? (
