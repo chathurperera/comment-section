@@ -2,6 +2,7 @@ import React from 'react'
 import Comment from './components/Comment.js';
 import './app.scss';
 import data from './assets/data.json';
+import AddCommentSection from './components/AddCommentSection.js';
 
 export default function App() {
   const commentsList = data.comments.map((comment) => {
@@ -14,6 +15,7 @@ export default function App() {
           {
             commentsList
           }
+        <AddCommentSection />
         </section>
     </div>
   )
