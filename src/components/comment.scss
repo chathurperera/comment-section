@@ -36,6 +36,13 @@
             font-weight: 500;
             color: #8c9094;
         }
+        .tag{
+            padding: 2px 8px;
+            margin-right: 10px;
+            border-radius: 2px;
+            background: #5457b5;
+            color:#fff;
+        }
     }
     &-text{
         padding-top: 12px;
@@ -67,4 +74,17 @@
     margin-left: 20px;
     padding-left: 20px;
     height: max-content;
+}
+.actions{
+    display: flex;
+    gap: 1rem;
+    p{
+        cursor: pointer;
+    }
+    span{
+        margin-left: 8px;
+    }
+    .red{
+        color: red;
+    }
 }

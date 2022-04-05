@@ -9,14 +9,14 @@ export default function Comment(props) {
   function upVote() {
     if (initialCount >= count) {
       setCount((prevCount) => (prevCount += 1));
-    } 
+    }
   }
   function downVote() {
     if (count !== 0 && count - initialCount === 1) {
       setCount((prevCount) => (prevCount -= 1));
     }
   }
-  const repliesList = props.replies.map((reply) => <Reply reply={reply} />) 
+  const repliesList = props.replies.map((reply) => <Reply reply={reply} />);
   return (
     <>
       <div className="comment">
@@ -61,11 +61,7 @@ export default function Comment(props) {
           </div>
         </div>
       </div>
-      <div className="replies">
-        {
-          repliesList
-        }
-      </div>
+      <div className="replies">{repliesList}</div>
     </>
   );
 }
