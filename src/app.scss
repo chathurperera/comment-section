@@ -7,14 +7,13 @@
 .app {
   background: #ffffff;
   position: relative;
-  height: 250vh;
   font-family: 'Rubik', sans-serif;
   .comment-section {
     width: 650px;
     margin: 0 auto;
-    position: absolute;
+    // position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    // transform: translate(-50%, -50%);
   }
 }
