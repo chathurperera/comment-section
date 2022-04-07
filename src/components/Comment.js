@@ -10,6 +10,7 @@ import AddCommentSection from "../components/AddCommentSection";
 
 export default function Comment(props) {
   const [count, setCount] = useState(props.comment.score);
+  const [replies, setReplies] = useState(props.replies);
   const [openReply, setOpenReply] = useState(false);
   const initialCount = props.comment.score;
   function upVote() {
@@ -22,10 +23,10 @@ export default function Comment(props) {
       setCount((prevCount) => (prevCount -= 1));
     }
   }
-  function reply(){
-    setOpenReply((prevState) => !prevState)
+  function reply() {
+    setOpenReply((prevState) => !prevState);
   }
-  const repliesList = props.replies.map((reply) => <Reply reply={reply} />);
+  const repliesList = replies.map((reply) => <Reply reply={reply} />);
   return (
     <>
       <div className="comment">
@@ -70,8 +71,13 @@ export default function Comment(props) {
           </div>
         </div>
       </div>
-      <div style={openReply ? {display:'block'} : {display:'none'} }>
-      <AddCommentSection addReplyTo={props.comment.user.username}/>
+      <div style={openReply ? { display: "block" } : { display: "none" }}>
+        <AddCommentSection
+        showAddReply={reply}
+         onAddComment={setReplies}
+          addReplyTo={props.comment.user.username}
+          commentID={props.comment.id}
+        />
       </div>
       <div className="replies">{repliesList}</div>
     </>
