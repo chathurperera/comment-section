@@ -4,39 +4,25 @@ import "../components/addCommentSection.scss";
 
 export default function AddCommentSection(props) {
   function showValue() {
-    const replyValue = document.getElementById("textarea").value;
+    let replyValue = document.getElementById("textarea").value;
     const id = Date.now();
     const replyTo = props.addReplyTo;
-    // const reply = {
-    //   content: replyValue,
-    //   createdAt: "Just Now",
-    //   id: id,
-    //   replyingTo: replyTo,
-    //   score: 0,
-    //   user: {
-    //     image: {
-    //       png: "./assets/avatars/image-ramsesmiron.png",
-    //     },
-    //     username: "ramsesmiron",
-    //   },
-    // };
-    console.log(replyValue);
-    props.onAddComment((prevData) => [
-      ...prevData,
-      {
-        content: replyValue,
-        createdAt: "Just Now",
-        id: id,
-        replyingTo: replyTo,
-        score: 0,
-        user: {
-          image: {
-            png: "./assets/avatars/image-ramsesmiron.png",
-          },
-          username: "ramsesmiron",
+    const reply = {
+      content: replyValue,
+      accountHolder : true,
+      createdAt: "Just Now",
+      id: id,
+      replyingTo: replyTo,
+      score: 0,
+      user: {
+        image: {
+          png: "./assets/avatars/image-ramsesmiron.png",
         },
+        username: "ramsesmiron",
       },
-    ]);
+    };
+    console.log(replyValue);
+    props.onAddComment((prevData) => [...prevData, {...reply}]);
     props.showAddReply();
   }
   return (
