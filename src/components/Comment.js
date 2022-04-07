@@ -71,7 +71,7 @@ export default function Comment(props) {
         </div>
       </div>
       <div style={openReply ? {display:'block'} : {display:'none'} }>
-      <AddCommentSection />
+      <AddCommentSection addReplyTo={props.comment.user.username}/>
       </div>
       <div className="replies">{repliesList}</div>
     </>
